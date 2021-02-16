@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        
+        <script>
+        // 1. randomly return 'rock', 'paper', or 'scissors'
+        // something doesnt work here 16/02
+
+        function computerPlay() {
+            let compChoice = Math.floor( Math.random() * Math.floor(3) );
+
+            if (compChoice === 0) {
+                return "Scissors";
+            } else if (compChoice === 1) {
+                return "Rock";
+            } else if (compChoice === 2) {
+                return "Paper";
+            }
+
+        }
+
+
+        // 2. function plays single round of rock paper scissors. Takes two paramenters
+        // playerSelection and computerSelection and then return a string that declares
+        // the winner of the round like so "You Lose! Paper beats Rock"
+        // function should be case insensitive (rock, ROCK, RoCk, etc)
+    
+
+       function playRound(computerSelection, playerSelection) {
+
+           computerSelection = computerPlay();
+           playerSelection = prompt("What will you play? Scissors, Paper or Rock?").toLowerCase();
+           
+
+           // player played paper
+              if (computerSelection === "Scissors" && playerSelection === "paper") {
+                return "You lose! Scissors cuts paper!";
+            } else if (computerSelection === "Rock" && playerSelection === "paper") {
+                return "You win! Paper covers rock";
+            } else if (computerSelection === "Paper" && playerSelection === "paper") {
+                return "Draw! Paper is neutral";
+
+            // player played rock
+            } else if (computerSelection === "Rock" && playerSelection === "rock") {
+                return "Draw! Rock is neutral";
+            } else if (computerSelection === "Paper" && playerSelection === "rock") {
+                return "You lose! Paper covers rock";
+            } else if (computerSelection === "Scissors" && playerSelection === "rock") {
+                return "You win! Rock beats scissors";
+
+            // player played scissors
+            } else if (computerSelection === "Rock" && playerSelection === "scissors") {
+                return "You lose! Rock beats scissors";
+            } else if (computerSelection === "Paper" && playerSelection === "scissors") {
+                return "You Win! Scissors cuts paper";
+            } else if (computerSelection === "Scissors" && playerSelection === "scissors") {
+                return "Draw! Scissors are neutral";
+            }
+            
+            // if player inputs nothing or something random
+              else if (playerSelection == "") {
+                alert("Input a value!");
+                location.reload();
+            } //else if (playerSelection !== "SCISSORS" || "PAPER" || "ROCK") {
+              //  alert("Input a valid value");
+              //  location.reload();
+        
+       } 
+       
+       console.log( playRound());
+       console.log( "computer chose: " + computerPlay() );
+       
+
+
+
+
+
+        </script>
+    </body>
+</html>
