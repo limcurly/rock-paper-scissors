@@ -43,41 +43,42 @@
 
            // player played paper
               if (computerSelection === "Scissors" && playerSelection === "paper") {
-                return "You lose! Scissors cuts paper!";
+                return "c=s You lose! Scissors cuts paper!";
             } else if (computerSelection === "Rock" && playerSelection === "paper") {
-                return "You win! Paper covers rock";
+                return "c=r You win! Paper covers rock";
             } else if (computerSelection === "Paper" && playerSelection === "paper") {
-                return "Draw! Paper is neutral";
+                return "c=p Draw! Paper is neutral";
 
             // player played rock
             } else if (computerSelection === "Rock" && playerSelection === "rock") {
-                return "Draw! Rock is neutral";
+                return "c=r Draw! Rock is neutral";
             } else if (computerSelection === "Paper" && playerSelection === "rock") {
-                return "You lose! Paper covers rock";
+                return "c=p You lose! Paper covers rock";
             } else if (computerSelection === "Scissors" && playerSelection === "rock") {
-                return "You win! Rock beats scissors";
+                return "c=s You win! Rock beats scissors";
 
             // player played scissors
             } else if (computerSelection === "Rock" && playerSelection === "scissors") {
-                return "You lose! Rock beats scissors";
+                return "c=r You lose! Rock beats scissors";
             } else if (computerSelection === "Paper" && playerSelection === "scissors") {
-                return "You Win! Scissors cuts paper";
+                return "c=p You Win! Scissors cuts paper";
             } else if (computerSelection === "Scissors" && playerSelection === "scissors") {
-                return "Draw! Scissors are neutral";
+                return "c=s Draw! Scissors are neutral";
             }
             
             // if player inputs nothing or something random
               else if (playerSelection == "") {
                 alert("Input a value!");
                 location.reload();
-            } //else if (playerSelection !== "SCISSORS" || "PAPER" || "ROCK") {
-              //  alert("Input a valid value");
-              //  location.reload();
+            } else if (playerSelection !== "scissors" || "paper" || "rock") {
+                alert("Input a valid value");
+                location.reload();
+            }
         
        } 
        
        console.log( playRound());
-       console.log( "computer chose: " + computerPlay() );
+    
        
 
 
