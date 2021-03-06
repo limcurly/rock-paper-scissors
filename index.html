@@ -1,125 +1,31 @@
 <!DOCTYPE html>
-
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!--<![endif]-->
 <html>
-    <head>
-        <meta charset="utf-8">
-        <meta http-equiv="X-UA-Compatible" content="IE=edge">
-        <title></title>
-        <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="stylesheet" href="">
-    </head>
-    <body>
-        
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!--[if lt IE 7]>
+            <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <div>
+        <button class="btn-choice" id="rock">✊</button>
+        <button class="btn-choice" id="paper">✋</button>
+        <button class="btn-choice" id="scissors">✌️</button>
+    </div>
 
 
-        <script>
+    <script src="main.js"></script>
+</body>
 
-
-        // 1. randomly return 'rock', 'paper', or 'scissors'
-
-        function computerPlay() {
-            let compChoice = Math.floor( Math.random() * Math.floor(3) );
-
-            if (compChoice === 0) {
-                return "Scissors";
-            } else if (compChoice === 1) {
-                return "Rock";
-            } else if (compChoice === 2) {
-                return "Paper";
-            }
-
-        }
-
-        // 2. function plays single round of rock paper scissors. Takes two paramenters
-        // playerSelection and computerSelection and then return a string that declares
-        // the winner of the round like so "You Lose! Paper beats Rock"
-        // function should be case insensitive (rock, ROCK, RoCk, etc)
-
-        // create scores and increment them on each win or not on a draw
-    
-       let playerScore = 0;
-       let comScore = 0;
-
-       function playRound(computerSelection, playerSelection) {
-
-           computerSelection = computerPlay();
-           playerSelection = prompt("What will you play? Scissors, Paper or Rock?").toLowerCase();
-           
-
-           // player played paper
-              if (computerSelection === "Scissors" && playerSelection === "paper") {
-                return ++comScore + "c=s You lose! Scissors cuts paper!";
-            } 
-            else if (computerSelection === "Rock" && playerSelection === "paper") {
-                return ++playerScore + "c=r You win! Paper covers rock";
-            } 
-            else if (computerSelection === "Paper" && playerSelection === "paper") {
-                return "c=p Draw! Paper is neutral";
-
-            // player played rock
-            } else if (computerSelection === "Rock" && playerSelection === "rock") {
-                return "c=r Draw! Rock is neutral";
-            } 
-            else if (computerSelection === "Paper" && playerSelection === "rock") {
-                return ++comScore + "c=p You lose! Paper covers rock";
-            } 
-            else if (computerSelection === "Scissors" && playerSelection === "rock") {
-                return ++playerScore + "c=s You win! Rock beats scissors";
-
-            // player played scissors
-            } else if (computerSelection === "Rock" && playerSelection === "scissors") {
-                return ++comScore + "c=r You lose! Rock beats scissors";
-            } 
-            else if (computerSelection === "Paper" && playerSelection === "scissors") {
-                return ++playerScore + "c=p You Win! Scissors cuts paper";
-            } 
-            else if (computerSelection === "Scissors" && playerSelection === "scissors") {
-                return "c=s Draw! Scissors are neutral";
-            }
-            
-            // if player inputs nothing or something random
-              else if (playerSelection == "") {
-                alert("Input a value!");
-                location.reload();
-            } else if (playerSelection !== "scissors" || "paper" || "rock") {
-                alert("Input a valid value");
-                location.reload();
-            }
-        
-       } 
-
-       // playRound() plays five rounds and determines a winner at the end
-
-       function game() {
-
-           console.log( playRound() );
-
-           console.log( playRound() );
-
-           console.log( playRound() );
-
-           console.log( playRound() );
-           
-           console.log( playRound() );
-
-           if (comScore > playerScore) {
-               return "Computer wins."
-           } else if (playerScore > comScore) {
-               return "Yay, You won!"
-           } else if (comScore == playerScore) {
-               return "The winner is... It's a tie..."
-           }
-       }
-
-       console.log( game() );
-    
-       
-
-
-
-
-
-        </script>
-    </body>
 </html>
