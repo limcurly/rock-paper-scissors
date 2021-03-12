@@ -14,3 +14,7 @@ v1.2 10/03/21:
 added output from console onto html. 
 not all but most including score, chosen value templates.
 NEXT SESSION: resolve all problems and get the chosen values linked.
+
+v1.3 13/03/21
+
+fully functional and ready to play
