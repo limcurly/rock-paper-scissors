@@ -1,6 +1,7 @@
 let playerScore = 0;
 let comScore = 0;
-
+let comChose = document.getElementById('com-chose');
+let playerChose = document.getElementById('player-chose');
 
 
 
@@ -28,6 +29,8 @@ document.getElementById('rock').addEventListener('click', function(e) {
     const physplayscore = document.getElementById('play-score');
     physplayscore.textContent = playerScore;
 
+    playerChose.textContent = "You chose rock";
+
 });
 document.getElementById('paper').addEventListener('click', function(e) {
     console.log("paper");
@@ -39,6 +42,8 @@ document.getElementById('paper').addEventListener('click', function(e) {
     const physplayscore = document.getElementById('play-score');
     physplayscore.textContent = playerScore;
 
+    playerChose.textContent = "You chose paper";
+
 });
 document.getElementById('scissors').addEventListener('click', function(e) {
     console.log("scissors");
@@ -49,6 +54,8 @@ document.getElementById('scissors').addEventListener('click', function(e) {
 
     const physplayscore = document.getElementById('play-score');
     physplayscore.textContent = playerScore;
+
+    playerChose.textContent = "You chose scissors";
 });
 
 //plays a round with the players choice
@@ -56,7 +63,9 @@ function playRound(playerSelection) {
 
     computerSelection = computerPlay();
 
-    console.log("com chose " + computerSelection);
+    console.log(computerSelection);
+
+    comChose.textContent = "Computer chose " + computerSelection;
 
     // if nobody has reached 5, continue playing
     if (comScore < 4 && playerScore < 4) {
