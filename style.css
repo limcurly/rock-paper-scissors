@@ -1,10 +1,10 @@
-/* html {
-    background-color: black;
-} */
+ html {
+    background-color: #4e43e6;
+} 
 
 .btn-choice {
-    background-color: black;
-    color: black;
+    background-color: rgb(255, 218, 176);
+    color: orangered;
     margin-right: 100px;
     border: none;
     width: 100px;
@@ -16,9 +16,14 @@
     justify-content: center;
 }
 
+#btns {
+    width: 66.66666666666%;
+    margin: 0 auto;
+}
+
 .btn-choice:hover {
     background-color: rgb(218, 141, 0);
-    transform: scale(1.3);
+    transform: scale(1.1);
     color: white;
     border-bottom: 3px solid white;
 }
@@ -35,9 +40,17 @@
 }
 
 #com-count {
-    background-color: rgb(134, 247, 123);
+    background-color: #ad65e0;
+    border: 1px solid violet;
+    margin-right: 200px;
+    margin-left: 50px;
+    text-align: center;
 }
 
 #player-count {
-    background-color: rgb(255, 92, 92);
+    background-color: #e250d8;
+    border: 1px solid violet;
+    margin-right: 200px;
+    margin-left: 50px;
+    text-align: center;
 }
